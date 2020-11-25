@@ -1,0 +1,44 @@
+<html lang="de">
+<body>
+<center>
+<h1>Berechnung der Laufzeit &uuml;ber Akku bei Brandmeldeanlagen.</h1>
+<p>
+<b>Wichtig:</b>Kommazahlen durch einen Punkt trennen.
+</p>
+<br>
+<form>
+Kapazit&auml;t in Ah:<input type="text" id="kap">
+Entladestrom in A:<input type="text" id="ent">
+Alarmstrom in A:<input type="text" id="alarm">
+<br>
+<br>
+<br>
+<button onclick=calc();>Berechnen</button>
+<br>
+<br>
+<br>
+<br>
+<img src="logo/logo.png">
+</form>
+<p style="font-size:15px;">SAS GmbH<br>
+Kieskauler Weg 24<br>
+51109 K&ouml;ln</p>
+</center>
+<script>
+var kap=0;
+var ent=0;
+var alarm=0;
+var a=0;
+var erg=0;
+
+function calc() {
+kap=document.getElementById('kap').value;
+ent=document.getElementById('ent').value;
+alarm=document.getElementById('alarm').value;
+a=kap-alarm*0.5;
+erg=a/ent;
+document.write("<center>Die Anlage wird <b>"+erg+"</b> Stunden im Akkubetrieb laufen.</center>");
+}
+</script>
+</body>
+<!--Coded by Billy Koch-->
